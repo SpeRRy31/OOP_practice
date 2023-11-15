@@ -12,6 +12,7 @@ int main()
 
     Customer customer;
     cin >> customer;
+    cout << customer << "\n";
 
     system("pause");
     return 0;

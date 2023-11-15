@@ -29,23 +29,35 @@ Customer::Customer(const Customer& other) {
 
 std::istream& operator>>(std::istream& input, Customer& customer)
 {
-	std::cout << "Enter ID: ";
+	std::cout << "\nВведіть ID: ";
 	input >> customer.id;
 
-	std::cout << "Enter First Name: ";
+	std::cout << "Введіть прізвище: ";
 	input >> customer.firstname;
 
-	std::cout << "Enter Second Name: ";
+	std::cout << "Введіть ім'я: ";
 	input >> customer.secondname;
 
-	std::cout << "Enter Third Name: ";
+	std::cout << "Введіть побатькові: ";
 	input >> customer.thirdname;
 
-	std::cout << "Enter Number: ";
+	std::cout << "Введіть номер картки: ";
 	input >> customer.number;
 
-	std::cout << "Enter Balance: ";
+	std::cout << "Введіть баланс: ";
 	input >> customer.balance;
 
 	return input;
+}
+
+std::ostream& operator<<(std::ostream& output, const Customer& customer)
+{
+	output << "\nID: " << customer.id << "\n"
+		<< "Прізвище: " << customer.firstname << "\n"
+		<< "Ім'я: " << customer.secondname << "\n"
+		<< "Побатькові: " << customer.thirdname << "\n"
+		<< "Номер картки: " << customer.number << "\n"
+		<< "Баланс: " << customer.balance << "\n";
+
+	return output;
 }
