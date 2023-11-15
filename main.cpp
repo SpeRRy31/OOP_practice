@@ -10,9 +10,16 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    Customer customer;
-    cin >> customer;
-    cout << customer << "\n";
+    Customer customer1, customer2, customer3;
+    cin >> customer1 >> customer2 >> customer3;
+    cout << customer1 << customer2 << customer3 << "\n";
+
+    if (customer1 == customer2) {
+        cout << "ќб'Їкти 1 та 2 р≥вн≥.\n";
+    }
+    else {
+        cout << "ќб'Їкти 1 та 2 не р≥вн≥.\n";
+    }
 
     system("pause");
     return 0;

@@ -61,3 +61,13 @@ std::ostream& operator<<(std::ostream& output, const Customer& customer)
 
 	return output;
 }
+
+bool Customer::operator==(const Customer& other) const
+{
+	return (id == other.id &&
+		firstname == other.firstname &&
+		secondname == other.secondname &&
+		thirdname == other.thirdname &&
+		number == other.number &&
+		balance == other.balance);
+}

@@ -21,4 +21,5 @@ public:
 
 	friend std::istream& operator>>(std::istream& input, Customer& customer);
 	friend std::ostream& operator<<(std::ostream& output, const Customer& customer);
+	bool operator==(const Customer& other) const;
 };
