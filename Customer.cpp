@@ -26,3 +26,26 @@ Customer::Customer(const Customer& other) {
 	this->number = other.number;
 	this->balance = other.balance;
 }
+
+std::istream& operator>>(std::istream& input, Customer& customer)
+{
+	std::cout << "Enter ID: ";
+	input >> customer.id;
+
+	std::cout << "Enter First Name: ";
+	input >> customer.firstname;
+
+	std::cout << "Enter Second Name: ";
+	input >> customer.secondname;
+
+	std::cout << "Enter Third Name: ";
+	input >> customer.thirdname;
+
+	std::cout << "Enter Number: ";
+	input >> customer.number;
+
+	std::cout << "Enter Balance: ";
+	input >> customer.balance;
+
+	return input;
+}

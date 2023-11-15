@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 /*
 2 Customer
 id, прізвище, ім'я, по батькові, адреса, номер кредитної картки, баланс рахунку (кількість грошей).
@@ -17,4 +18,6 @@ public:
 	Customer();
 	Customer(int id, std::string firstname, std::string secondname, std::string thirdname, std::string number, float balance);
 	Customer(const Customer& other);
+
+	friend std::istream& operator>>(std::istream& input, Customer& obj);
 };
