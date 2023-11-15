@@ -1,0 +1,38 @@
+# Виключення для проєктів C++
+*.o
+*.out
+*.dll
+*.exe
+*.pdb
+*.obj
+
+# Виключення для середовища розробки
+.vscode/
+.vs/
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.cbp
+*.user
+
+# Виключення для збірки
+/build/
+
+# Виключення для логів і файлів відлагодження
+*.log
+*.logs
+*.log.*
+*.trace
+*.session
+*.vcxproj.user
+*.suo
+*.user
+*.suo
+*.mode*
+*.aps
+*.swp
+
+# Інші виключення
+.DS_Store
+Thumbs.db
