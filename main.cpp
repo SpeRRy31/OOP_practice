@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Customer.h"
+#include "Seller.h"
 #include "windows.h"
 #include <cstdlib>
 
@@ -10,16 +11,15 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    Customer customer1, customer2, customer3;
-    cin >> customer1 >> customer2 >> customer3;
-    cout << customer1 << customer2 << customer3 << "\n";
+    Seller seller1, seller2;
+    cout << "¬вед≥ть ≥нформац≥ю про продавц€ 1:\n";
+    cin >> seller1;
 
-    if (customer1 == customer2) {
-        cout << "ќб'Їкти 1 та 2 р≥вн≥.\n";
-    }
-    else {
-        cout << "ќб'Їкти 1 та 2 не р≥вн≥.\n";
-    }
+    cout << "\n¬вед≥ть ≥нформац≥ю про продавц€ 2:\n";
+    cin >> seller2;
+
+    cout << "\n≤нформац≥€ про продавц€ 1:\n" << seller1;
+    cout << "\n≤нформац≥€ про продавц€ 2:\n" << seller2;
 
     system("pause");
     return 0;
