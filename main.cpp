@@ -11,15 +11,16 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    Seller seller1, seller2;
-    cout << "¬вед≥ть ≥нформац≥ю про продавц€ 1:\n";
+    Customer customer1;
+    cout << "¬вед≥ть ≥нформац≥ю про покупц€:\n";
+    cin >> customer1;
+
+    Seller seller1;
+    cout << "¬вед≥ть ≥нформац≥ю про продавц€:\n";
     cin >> seller1;
 
-    cout << "\n¬вед≥ть ≥нформац≥ю про продавц€ 2:\n";
-    cin >> seller2;
-
-    cout << "\n≤нформац≥€ про продавц€ 1:\n" << seller1;
-    cout << "\n≤нформац≥€ про продавц€ 2:\n" << seller2;
+    cout << "\n≤нформац≥€ про покупц€:\n" << customer1;
+    cout << "\n≤нформац≥€ про продавц€:\n" << seller1;
 
     system("pause");
     return 0;
