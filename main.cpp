@@ -19,7 +19,8 @@ int main()
     cout << "Введіть інформацію про продавця:\n";
     cin >> seller1;
 
-    cout << "\nІнформація про покупця:\n" << customer1;
+    cout << customer1.toString();
+
     cout << "\nІнформація про продавця:\n" << seller1;
 
     system("pause");

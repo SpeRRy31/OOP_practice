@@ -15,6 +15,8 @@ public:
 	Customer(int id, std::string firstname, std::string secondname, std::string thirdname, std::string address, std::string number, float balance);
 	Customer(const Customer& other);
 
+	std::string toString() override;
+
 	friend std::istream& operator>>(std::istream& input, Customer& customer);
 	friend std::ostream& operator<<(std::ostream& output, const Customer& customer);
 };

@@ -20,6 +20,7 @@ public:
     Seller(const Seller& other);
 
     void addProduct(const std::string& product);
+    std::string toString() override;
 
     friend std::ostream& operator<<(std::ostream& output, const Seller& seller);
     friend std::istream& operator>>(std::istream& input, Seller& seller);

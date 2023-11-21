@@ -4,6 +4,7 @@
 
 class Person
 {
+protected:
     int id;
     std::string firstname;
     std::string secondname;
@@ -11,9 +12,7 @@ class Person
     std::string address;
     std::string number;
 public:
-    Person();
-    Person(int id, std::string firstname, std::string secondname, std::string thirdname, std::string address, std::string number);
-    Person(const Person& other);
+    virtual std::string toString() = 0;
 
     friend std::istream& operator>>(std::istream& input, Person& person); 
     friend std::ostream& operator<<(std::ostream& output, const Person& person);
