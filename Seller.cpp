@@ -44,7 +44,24 @@ void Seller::addProduct(const std::string& product) {
 
 std::istream& operator>>(std::istream& input, Seller& seller) {
 
-	input >> static_cast<Person&>(seller);
+	std::cout << "\nВведіть ID: ";
+	input >> seller.id;
+
+	std::cout << "Введіть прізвище: ";
+	input >> seller.firstname;
+
+	std::cout << "Введіть ім'я: ";
+	input >> seller.secondname;
+
+	std::cout << "Введіть побатькові: ";
+	input >> seller.thirdname;
+
+	std::cout << "Введіть адресу: ";
+	input >> seller.address;
+
+	std::cout << "Введіть номер картки: ";
+	input >> seller.number;
+
 
 	seller.productCount = 0;
 
@@ -57,7 +74,12 @@ std::istream& operator>>(std::istream& input, Seller& seller) {
 	return input;
 }
 std::ostream& operator<<(std::ostream& output, const Seller& seller) {
-	output << static_cast<const Person&>(seller) << "\n"
+	output << "\nID: " << seller.id << "\n"
+		<< "Прізвище: " << seller.firstname << "\n"
+		<< "Ім'я: " << seller.secondname << "\n"
+		<< "Побатькові: " << seller.thirdname << "\n"
+		<< "Адреса: " << seller.address << "\n"
+		<< "Номер картки: " << seller.number << "\n"
 		<< "Список товарів:\n";
 	for (int i = 0; i < seller.productCount; ++i) {
 		output << "  - " << seller.productList[i] << "\n";
@@ -72,4 +94,39 @@ std::string Seller::toString() {
 		outputString += " -" + productList[i];
 	}
 	return outputString;
+}
+void Seller::getData() {
+	std::cout << "Дані про продавця:\n";
+	std::cout << "ID: ";
+	std::cin >> id;
+	std::cout << "Прізвище: ";
+	std::cin >> firstname;
+	std::cout << "Ім'я: ";
+	std::cin >> secondname;
+	std::cout << "Побатькове: ";
+	std::cin >> thirdname;
+	std::cout << "Адрес: ";
+	std::cin >> address;
+	std::cout << "Номер картки: ";
+	std::cin >> number;
+	std::cout << "Кількість товару: ";
+	std::cin >> productCount;
+	std::cout << "Введіть " << productCount << " товара:\n";
+	for (int j = 0; j < productCount; ++j) {
+		std::cout << "Товар " << j + 1 << ": ";
+		std::cin >> productList[j];
+	}
+}
+
+void Seller::opData() {
+	std::cout << "\nID: " << id << "\n"
+		<< "Прізвище: " << firstname << "\n"
+		<< "Ім'я: " << secondname << "\n"
+		<< "Побатькові: " << thirdname << "\n"
+		<< "Адреса: " << address << "\n"
+		<< "Номер картки: " << number << "\n"
+		<< "Список товарів:\n";
+	for (int i = 0; i < productCount; ++i) {
+		std::cout << "  - " << productList[i] << "\n";
+	}
 }

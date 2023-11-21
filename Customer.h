@@ -16,6 +16,8 @@ public:
 	Customer(const Customer& other);
 
 	std::string toString() override;
+	void getData() override;
+	void opData() override;
 
 	friend std::istream& operator>>(std::istream& input, Customer& customer);
 	friend std::ostream& operator<<(std::ostream& output, const Customer& customer);

@@ -13,8 +13,7 @@ protected:
     std::string number;
 public:
     virtual std::string toString() = 0;
-
-    friend std::istream& operator>>(std::istream& input, Person& person); 
-    friend std::ostream& operator<<(std::ostream& output, const Person& person);
+    virtual void getData() = 0;
+    virtual void opData() = 0;
 };
 
