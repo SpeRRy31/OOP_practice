@@ -3,7 +3,7 @@
 #include "Seller.h"
 #include "windows.h"
 #include <cstdlib>
-
+#include "vector.cpp"
 
 using namespace std;
 
@@ -12,6 +12,7 @@ int menu() {
     cout << "Меню:\n";
     cout << "1. Створити Customer\n";
     cout << "2. Створити Seller\n";
+    cout << "3. Вихід\n";
     cout << "Ваш вибір: ";
     cin >> choice;
     return choice;
@@ -21,42 +22,27 @@ int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    const int MAX_PERSON = 5;
-    Person* personList[MAX_PERSON];
+    /*
+    Vector<int> array;
 
-    int i = 0;
-    do {
-        switch (menu()) {
-        case 1:
-            personList[i] = new Customer();
-            personList[i]->getData();
-            break;
-        case 2:
-            personList[i] = new Seller();
-            personList[i]->getData();
-            break;
-        default:
-            cout << "Вашого вибору не існує... Повторіть знову.\n";
-            --i;
-        }
-        i++;
-    } while (i < MAX_PERSON);
-
-    cout << "\nДані про персону\n";
-    for (int i = 0; i < MAX_PERSON; ++i) {
-        cout << personList[i]->toString() << endl;
+    for (int i = 0; i < 50; i += 3) {
+        array.push_back(i);
     }
 
-    cout << "\nto_String:\n";
-    for (int i = 0; i < MAX_PERSON; ++i) {
-        cout << personList[i]->toString() << endl;
+    for (int i = 0; i < array.getSize(); i++) {
+        cout << array.at(i) << endl;
     }
+    */
+    Vector<Seller> seller_vector;
+    Seller seller1, seller2;
+    seller1.getData();
+    seller2.getData();
 
-    for (int i = 0; i < MAX_PERSON; ++i) {
-        delete personList[i];
-    }
+    seller_vector.push_back(seller1);
+    seller_vector.push_back(seller2);
 
+    seller_vector.display();
 
-    system("pause");
+    cin.get();
     return 0;
 }
