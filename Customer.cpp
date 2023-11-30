@@ -101,3 +101,7 @@ void Customer::opData() {
 		<< "Номер картки: " << number << "\n"
 		<< "Баланс: " << balance << "\n";
 }
+
+int Customer::getID() {
+	return this->id;
+}

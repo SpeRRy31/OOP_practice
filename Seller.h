@@ -22,6 +22,7 @@ public:
     void addProduct(const std::string& product);
     void getData() override;
     void opData() override;
+    int getID() override;
     std::string toString() override;
 
     friend std::ostream& operator<<(std::ostream& output, const Seller& seller);

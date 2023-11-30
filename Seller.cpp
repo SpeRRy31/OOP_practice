@@ -140,3 +140,7 @@ void Seller::opData() {
 		std::cout << "  - " << productList[i] << "\n";
 	}
 }
+
+int Seller::getID() {
+	return this->id;
+}
