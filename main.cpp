@@ -12,7 +12,7 @@ int menu() {
     cout << "Меню:\n";
     cout << "1. Створити Customer\n";
     cout << "2. Створити Seller\n";
-    cout << "3. Вихід\n";
+    cout << "3. Відобразити все та вийти\n";
     cout << "Ваш вибір: ";
     cin >> choice;
     return choice;
@@ -33,6 +33,8 @@ int main() {
         cout << array.at(i) << endl;
     }
     */
+    
+    /*
     Vector<Seller> seller_vector;
     Seller seller1, seller2;
     seller1.getData();
@@ -42,7 +44,39 @@ int main() {
     seller_vector.push_back(seller2);
 
     seller_vector.display();
+    */
 
-    cin.get();
+    Vector<Person*> vector;
+
+    Person* person;
+
+    bool init = true;
+
+    while (init) {
+        switch (menu()) {
+        case 1:
+            person = new Customer();
+            person->getData();
+            vector.push_back(person);
+            break;
+        case 2:
+            person = new Seller();
+            person->getData();
+            vector.push_back(person);
+            break;
+        case 3:
+            init = false;
+            break;
+        default:
+            cout << "error.. input valid value.\n";
+        }
+    }
+
+    for (int i = 0; i < vector.getSize(); i++) {
+        cout << vector[i]->toString();
+    }
+
+    system("pause");
+
     return 0;
 }
