@@ -2,8 +2,11 @@
 #include "Customer.h"
 #include "Seller.h"
 #include "windows.h"
+#include <vector>
 #include <cstdlib>
-#include "vector.cpp"
+#include <ctime>
+#include <stdlib.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -22,47 +25,57 @@ int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    /*
-    Vector<int> array;
-
-    for (int i = 0; i < 50; i += 3) {
-        array.push_back(i);
+    vector<int> indexVector;
+    for (int i = 0; i < 10; i++) {
+        indexVector.push_back(2 * i + 1); 
     }
 
-    for (int i = 0; i < array.getSize(); i++) {
-        cout << array.at(i) << endl;
+    vector<int> iteratorVector;
+    srand(time(0));  
+    for (int i = 0; i < 10; i++) {
+        iteratorVector.push_back(rand() % 100 * 2); 
     }
-    */
+
+    sort(indexVector.begin(), indexVector.end());
+    sort(iteratorVector.begin(), iteratorVector.end());
     
-    /*
-    Vector<Seller> seller_vector;
-    Seller seller1, seller2;
-    seller1.getData();
-    seller2.getData();
+    vector<int> mergeVector;
+    merge(indexVector.begin(), indexVector.end(), iteratorVector.begin(), iteratorVector.end(), back_inserter(mergeVector));
 
-    seller_vector.push_back(seller1);
-    seller_vector.push_back(seller2);
+    cout << "Перший вектор: ";
+    for (size_t i = 0; i < indexVector.size(); i++) {
+        cout << indexVector[i] << " ";
+    }
+    cout << endl;
 
-    seller_vector.display();
-    */
+    cout << "Другий вектор: ";
+    for (size_t i = 0; i < iteratorVector.size(); i++) {
+        cout << iteratorVector[i] << " ";
+    }
 
-    Vector<Person*> vector;
+    cout << endl;
 
+    cout << "Третій вектор: ";
+    for (size_t i = 0; i < mergeVector.size(); i++) {
+        cout << mergeVector[i] << " ";
+    }
+
+    cout << endl;
+
+    vector<Person*> classVector;
     Person* person;
-
     bool init = true;
-
     while (init) {
         switch (menu()) {
         case 1:
             person = new Customer();
             person->getData();
-            vector.push_back(person);
+            classVector.push_back(person);
             break;
         case 2:
             person = new Seller();
             person->getData();
-            vector.push_back(person);
+            classVector.push_back(person);
             break;
         case 3:
             init = false;
@@ -70,11 +83,17 @@ int main() {
         default:
             cout << "error.. input valid value.\n";
         }
+
+        cout << endl;
     }
 
-    for (int i = 0; i < vector.getSize(); i++) {
-        cout << vector[i]->toString();
+    for (int i = 0; i < classVector.size(); i++) {
+
+        cout << classVector[i]->toString() << endl;
     }
+
+
+    cout << endl;
 
     system("pause");
 
