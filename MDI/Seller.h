@@ -16,12 +16,13 @@ class Seller : public Person{
 
 public:
     Seller();
-    Seller(int id, std::string firstname, std::string secondname, std::string thirdname, std::string address, std::string number, std::string prductList[MAX_PRODUCTS], int productCount);
+    Seller(int id, std::string firstname, std::string secondname, std::string thirdname, std::string address, std::string number, std::string prductList[]);
     Seller(const Seller& other);
 
     void addProduct(const std::string& product);
     void getData() override;
     void opData() override;
+    int getID() override;
     std::string toString() override;
 
     friend std::ostream& operator<<(std::ostream& output, const Seller& seller);

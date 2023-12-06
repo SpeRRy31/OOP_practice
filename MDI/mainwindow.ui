@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>956</width>
-    <height>609</height>
+    <width>508</width>
+    <height>384</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="2">
+    <item row="0" column="1">
      <spacer name="verticalSpacer_2">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -23,7 +23,7 @@
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>192</height>
+        <height>68</height>
        </size>
       </property>
      </spacer>
@@ -35,59 +35,70 @@
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>372</width>
+        <width>170</width>
         <height>20</height>
        </size>
       </property>
      </spacer>
     </item>
-    <item row="1" column="1" colspan="2">
-     <layout class="QVBoxLayout" name="verticalLayout">
+    <item row="1" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QPushButton" name="createCustomerBtn">
-        <property name="text">
-         <string>Створити об'єкт Customer</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="createSellerBtn">
-        <property name="text">
-         <string>Створити об'єкт Seller</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="viewCustomerBtn">
-        <property name="text">
-         <string>Відобразити об'єкти Customer</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="viewSellerBtn">
-        <property name="text">
-         <string>Відобразити об'єкти Seller</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="exitBtn">
-        <property name="text">
-         <string>Закрити програму</string>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>меню</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>створити Customer</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>стоврити Seller</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="text">
+           <string>відобразити Customer</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>відобразити Seller</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="text">
+           <string>вихід</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
-    <item row="1" column="3">
+    <item row="1" column="2">
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>372</width>
+        <width>169</width>
         <height>20</height>
        </size>
       </property>
@@ -101,7 +112,7 @@
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>192</height>
+        <height>67</height>
        </size>
       </property>
      </spacer>
@@ -113,7 +124,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>956</width>
+     <width>508</width>
      <height>21</height>
     </rect>
    </property>

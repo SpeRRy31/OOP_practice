@@ -9,17 +9,23 @@ Seller::Seller() {
 	this->address = "";
 	this->number = "";
 	this->productCount = 0;
+
+	for (int i = 0; i < MAX_PRODUCTS; ++i) {
+		this->productList[i] = "";
+	}
 }
 
-Seller::Seller(int id, std::string firstname, std::string secondname, std::string thirdname, std::string address, std::string number, std::string prductList[MAX_PRODUCTS], int productCount) {
+Seller::Seller(int id, std::string firstname, std::string secondname, std::string thirdname, std::string address, std::string number, std::string prductList[]) {
 	this->id = id;
 	this->firstname = firstname;
 	this->secondname = secondname;
 	this->thirdname = thirdname;
 	this->address = address;
-	this->number = number;
-	this->productList[MAX_PRODUCTS] = productList[MAX_PRODUCTS];
-	this->productCount = productCount;
+    this->number = number;
+
+	for (int i = 0; i < MAX_PRODUCTS; ++i) {
+		this->productList[i] = productList[i];
+	}
 }
 
 Seller::Seller(const Seller& other) {
@@ -28,9 +34,12 @@ Seller::Seller(const Seller& other) {
 	this->secondname = other.secondname;
 	this->thirdname = other.thirdname;
 	this->address = other.address;
-	this->number = other.number;
-	this->productList[MAX_PRODUCTS] = other.productList[MAX_PRODUCTS];
+	this->number = other.number; 
 	this->productCount = other.productCount;
+
+	for (int i = 0; i < MAX_PRODUCTS; ++i) {
+		this->productList[i] = other.productList[i];
+	}
 }
 
 void Seller::addProduct(const std::string& product) {
@@ -129,4 +138,8 @@ void Seller::opData() {
 	for (int i = 0; i < productCount; ++i) {
 		std::cout << "  - " << productList[i] << "\n";
 	}
+}
+
+int Seller::getID() {
+	return this->id;
 }

@@ -15,5 +15,6 @@ public:
     virtual std::string toString() = 0;
     virtual void getData() = 0;
     virtual void opData() = 0;
+    virtual int getID() = 0;
 };
 

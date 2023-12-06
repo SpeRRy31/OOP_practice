@@ -24,6 +24,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         Customer.cpp Customer.h Person.cpp Person.h Seller.cpp Seller.h
+        dialogcreatecustomer.h dialogcreatecustomer.cpp dialogcreatecustomer.ui
+        dialogcreateseller.h dialogcreateseller.cpp dialogcreateseller.ui
+        dialogshowseller.h dialogshowseller.cpp dialogshowseller.ui
+        dialogshowcustomer.h dialogshowcustomer.cpp dialogshowcustomer.ui
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET MDI APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -30,16 +30,6 @@ Customer::Customer(const Customer& other) {
 	this->balance = other.balance;
 }
 
-void Customer::init(int id, std::string firstname, std::string secondname, std::string thirdname, std::string address, std::string number, float balance) {
-    this->id = id;
-    this->firstname = firstname;
-    this->secondname = secondname;
-    this->thirdname = thirdname;
-    this->address = address;
-    this->number = number;
-    this->balance = balance;
-}
-
 std::istream& operator>>(std::istream& input, Customer& customer)
 {
 	std::cout << "\nВведіть ID: ";
@@ -110,4 +100,8 @@ void Customer::opData() {
 		<< "Адреса: " << address << "\n"
 		<< "Номер картки: " << number << "\n"
 		<< "Баланс: " << balance << "\n";
+}
+
+int Customer::getID() {
+	return this->id;
 }

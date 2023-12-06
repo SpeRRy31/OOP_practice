@@ -18,8 +18,7 @@ public:
 	std::string toString() override;
 	void getData() override;
 	void opData() override;
-
-    void init(int id, std::string firstname, std::string secondname, std::string thirdname, std::string address, std::string number, float balance);
+	int getID() override;
 
 	friend std::istream& operator>>(std::istream& input, Customer& customer);
 	friend std::ostream& operator<<(std::ostream& output, const Customer& customer);
