@@ -27,7 +27,7 @@ void DialogCreateCustomer::on_createCustomerBtn_clicked()
     QString number = ui->numberEdit->text();
     float balance = ui->balanceEdit->text().toFloat();
 
-    if (ID==0 || firstname.isEmpty() || firstname.isEmpty() || firstname.isEmpty() || firstname.isEmpty() || firstname.isEmpty() || balance < 0){
+    if (ID==0 || firstname.isEmpty() || secondname.isEmpty() || thirdname.isEmpty() || address.isEmpty() || number.isEmpty() || balance < 0){
         QMessageBox::critical(this, "ПОМИЛКА", "Заповніть усі поля.");
     }
     else{

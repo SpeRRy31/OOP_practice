@@ -28,6 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         dialogcreateseller.h dialogcreateseller.cpp dialogcreateseller.ui
         dialogshowseller.h dialogshowseller.cpp dialogshowseller.ui
         dialogshowcustomer.h dialogshowcustomer.cpp dialogshowcustomer.ui
+        dbmanager.h
 
     )
 # Define target properties for Android with Qt 6 as:

@@ -25,19 +25,17 @@ void DialogCreateSeller::on_createSellerBtn_clicked()
     QString thirdname = ui->thirdnameEdit->text();
     QString address = ui->addressEdit->text();
     QString number = ui->numberEdit->text();
-    std::string list[1];
-    list[0] = ui->goodsEdit->text().toStdString();
+    QString product = ui->goodsEdit->text();
 
-
-    if (ID==0 || firstname.isEmpty() || firstname.isEmpty() || firstname.isEmpty() || firstname.isEmpty() || firstname.isEmpty() || ui->goodsEdit->text().isEmpty()){
+    if (ID==0 || firstname.isEmpty() || secondname.isEmpty() || thirdname.isEmpty() || address.isEmpty() || number.isEmpty() || product.isEmpty()){
         QMessageBox::critical(this, "ПОМИЛКА", "Заповніть усі поля.");
     }
     else{
-        seller = new Seller(ID, firstname.toStdString(), secondname.toStdString(), thirdname.toStdString(), address.toStdString(), number.toStdString(), list);
+        seller = new Seller(ID, firstname.toStdString(), secondname.toStdString(), thirdname.toStdString(), address.toStdString(), number.toStdString(), product.toStdString());
 
         qDebug() << QString::fromStdString(seller->toString());
 
-        emit(createdSeller(seller));
+        emit createdSeller(seller);
 
 
         this->close();

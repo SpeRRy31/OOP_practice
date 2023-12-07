@@ -3,6 +3,12 @@
 
 #include <QDialog>
 
+#include <QSqlTableModel>
+#include "sqlitedbmanager.h"
+
+class QSqlTableModel;
+class DBManager;
+
 #include "Seller.h"
 
 namespace Ui {
@@ -14,7 +20,7 @@ class DialogShowSeller : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogShowSeller(QWidget *parent = nullptr);
+    explicit DialogShowSeller(DBManager* dbManager, QWidget *parent = nullptr);
     ~DialogShowSeller();
 
 public slots:
@@ -25,6 +31,10 @@ private slots:
 
 private:
     Ui::DialogShowSeller *ui;
+    DBManager* dbManager;
+    QSqlTableModel* model;
+    void setupModel(const QString& tableName, const QStringList& headers);
+    void createUI();
 };
 
 #endif // DIALOGSHOWSELLER_H

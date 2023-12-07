@@ -105,3 +105,27 @@ void Customer::opData() {
 int Customer::getID() {
 	return this->id;
 }
+
+std::string Customer::getFirstname() const {
+    return firstname;
+}
+
+std::string Customer::getSecondname() const {
+    return secondname;
+}
+
+std::string Customer::getThirdname() const {
+    return thirdname;
+}
+
+std::string Customer::getAddress() const {
+    return address;
+}
+
+std::string Customer::getNumber() const {
+    return number;
+}
+
+float Customer::getBalance() const {
+    return balance;
+}

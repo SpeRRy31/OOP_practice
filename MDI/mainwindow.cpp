@@ -1,18 +1,20 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "dbmanager.h"
+#include "sqlitedbmanager.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(DBManager* dbManager,  QWidget* parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow), dbManager(dbManager)
 {
     ui->setupUi(this);
 
     this->CreateCustomer = new DialogCreateCustomer;
-    this->ShowCustomer = new DialogShowCustomer;
+    this->ShowCustomer = new DialogShowCustomer(this->dbManager, this);
     connect(CreateCustomer, &DialogCreateCustomer::createdCustomer, ShowCustomer, &DialogShowCustomer::on_createCustomer);
 
     this->CreateSeller = new DialogCreateSeller;
-    this->ShowSeller = new DialogShowSeller;
+    this->ShowSeller = new DialogShowSeller(this->dbManager, this);
     connect(CreateSeller, &DialogCreateSeller::createdSeller, ShowSeller, &DialogShowSeller::on_createdSeller);
 }
 
@@ -30,7 +32,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    CreateSeller->setModal(true);
+    CreateSeller->setModal(false);
     CreateSeller->exec();
 }
 
@@ -44,7 +46,7 @@ void MainWindow::on_pushButton_4_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    ShowSeller->setModal(true);
+    ShowSeller->setModal(false);
     ShowSeller->exec();
 }
 

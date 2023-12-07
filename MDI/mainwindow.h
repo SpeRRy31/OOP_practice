@@ -3,24 +3,35 @@
 
 #include <QMainWindow>
 
+#include <QSqlTableModel>
+class QSqlTableModel;
+class DBManager;
+
 #include "dialogcreatecustomer.h"
 #include "dialogcreateseller.h"
 #include "dialogshowcustomer.h"
 #include "dialogshowseller.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
-    MainWindow(QWidget *parent = nullptr);
+
     ~MainWindow();
+    explicit MainWindow(DBManager* dbManrage, QWidget* parent = nullptr);
+private:
+    DBManager* dbManager;
+
+    //QSqlTableModel* model;
+
+
+
+
+
 
 private slots:
     void on_pushButton_clicked();
