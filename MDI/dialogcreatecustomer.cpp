@@ -28,7 +28,7 @@ void DialogCreateCustomer::on_createCustomerBtn_clicked()
     float balance = ui->balanceEdit->text().toFloat();
 
     if (ID==0 || firstname.isEmpty() || secondname.isEmpty() || thirdname.isEmpty() || address.isEmpty() || number.isEmpty() || balance < 0){
-        QMessageBox::critical(this, "ПОМИЛКА", "Заповніть усі поля.");
+        QMessageBox::critical(this, "помилка", "Поля не заповнені або заповнені не правильно.");
     }
     else{
         customer = new Customer(ID, firstname.toStdString(), secondname.toStdString(), thirdname.toStdString(), address.toStdString(), number.toStdString(), balance);

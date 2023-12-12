@@ -16,6 +16,7 @@ SOURCES += \
     dialogcreateseller.cpp \
     dialogshowcustomer.cpp \
     dialogshowseller.cpp \
+    logfile.cpp \
     main.cpp \
     mainwindow.cpp \
     sqlitedbmanager.cpp
@@ -29,6 +30,7 @@ HEADERS += \
     dialogcreateseller.h \
     dialogshowcustomer.h \
     dialogshowseller.h \
+    logfile.h \
     mainwindow.h \
     sqlitedbmanager.h
 

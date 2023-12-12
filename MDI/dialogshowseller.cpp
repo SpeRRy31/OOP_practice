@@ -21,6 +21,8 @@ DialogShowSeller::DialogShowSeller(DBManager* dbManager, QWidget *parent)
                                    << tr("number_card")
                                    << tr("goods")
                      );
+
+    model->select();
     this->createUI();
 }
 void DialogShowSeller::setupModel(const QString& tableName, const QStringList& headers) {
